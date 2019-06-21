@@ -1,23 +1,25 @@
-function getFirstSelector(selector){
-  const lis = document.querySelector(selector);
-  return lis;
+function getFirstSelector(selector) {
+  return document.querySelector(selector);
 }
 
-function nestedTarget(target){
-  var find = document.getElementById('nested');
-  return find;
+function nestedTarget() {
+  return document.getElementById('nested').querySelector('.target');
 }
 
-function deepestChild(){
-  var deep = document.getElementById("grand-node").querySelectorAll('div');
-  return deep[deep.length-1];
+function increaseRankBy(n) {
+  const lis = document.getElementById('app').querySelectorAll('ul.ranked-list li');
+  for (var i = 0; i < lis.length; i++) {
+    lis[i].innerHTML = (parseInt(lis[i].innerHTML) + n).toString();
+  }
 }
 
-function increaseRankBy(n){
-  const lis =document.getElementById('app').querySelectorAll('ul.ranked-list li')
+function deepestChild() {
+  const grand = document.getElementById('grand-node');
+  var div = grand.children[0];
 
-for (let i = 0; i < lis.length; i++) {
-  lis[i].innerHTML = parseInt(lis[i].innerHTML) + n;
-}
-return lis;
+  for (var i = 0; i < 3; i++) {
+    div = div.children[0];
+  }
+  console.log(div);
+   return div;
 }
