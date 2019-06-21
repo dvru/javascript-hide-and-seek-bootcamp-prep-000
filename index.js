@@ -4,8 +4,7 @@ function getFirstSelector(selector){
 }
 
 function nestedTarget(target){
-  var find = document.getElementById('nested');
-
+  var find = document.getElementById("nested");
   return find;
 }
 
